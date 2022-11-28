@@ -1,0 +1,738 @@
+*{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+html{
+    height: 100%;
+    background-image: url('ImagenPokedex/htmlBackground.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+    background-size: cover;
+   margin: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+p.textDescriptionP{
+    margin: 16px;
+}
+
+/*Contedor superior------------------------------------------------*/
+.conteinerTop{
+    display: flex;
+    border: solid;
+    border-radius: 50px;
+    max-width: 700px;
+    background-color: rgb(254, 255, 183);
+    background-image: repeating-linear-gradient( rgb(244, 247, 118) , rgba(189, 192, 0, 0.342) 5px);
+    align-items: center;
+    align-content: center;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.elementTop{
+    display: flex;
+    border: solid;
+    border-radius: 7px;
+    border-color: rgb(162, 54, 177);
+    flex-wrap: nowrap;
+    flex-direction: column;
+    background-color: rgba(238, 161, 255, 0.452);
+}
+.elementId{
+    display: flex;
+    border-radius: 20px;
+    border-color: rgb(121, 155, 70);
+
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+}
+.elementName{
+    display: flex;
+    border: solid;
+    border-radius: 20px;
+    border-color: rgb(224, 127, 0);
+    background-color: rgb(253, 192, 113);
+    text-align: center;
+    justify-content: space-between;
+    align-items: center;
+    height: 40px;
+}
+.pokeCategory{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    font-size: larger;
+    height: 5px;
+    padding-top: 2px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-top: 10px;
+    border-radius: 4px;
+    background-color: rgb(97, 74, 43);
+    color: rgb(223, 223, 223); 
+    text-shadow: 
+        /* first layer at 1px */
+        -1px -1px 0px rgb(97, 74, 43),
+         0px -1px 0px rgb(97, 74, 43),
+         1px -1px 0px rgb(97, 74, 43),
+        -1px  0px 0px rgb(97, 74, 43),
+         1px  0px 0px rgb(97, 74, 43),
+        -1px  1px 0px rgb(97, 74, 43),
+         0px  1px 0px rgb(97, 74, 43),
+         1px  1px 0px rgb(97, 74, 43),
+        /* second layer at 2px */
+        -2px -2px 0px rgb(97, 74, 43),
+        -1px -2px 0px rgb(97, 74, 43),
+         0px -2px 0px rgb(97, 74, 43),
+         1px -2px 0px rgb(97, 74, 43),
+         2px -2px 0px rgb(97, 74, 43),
+         2px -1px 0px rgb(97, 74, 43),
+         2px  0px 0px rgb(97, 74, 43),
+         2px  1px 0px rgb(97, 74, 43),
+         2px  2px 0px rgb(97, 74, 43),
+         1px  2px 0px rgb(97, 74, 43),
+         0px  2px 0px rgb(97, 74, 43),
+        -1px  2px 0px rgb(97, 74, 43),
+        -2px  2px 0px rgb(97, 74, 43),
+        -2px  1px 0px rgb(97, 74, 43),
+        -2px  0px 0px rgb(97, 74, 43),
+        -2px -1px 0px rgb(97, 74, 43);
+}
+p.pokemonName{
+    margin-left: 5px;
+}
+.elementInput{
+    display: flex;
+   /* border: solid;*/
+    padding: 5px;
+    justify-content: space-around;
+
+}
+.elementTypeSize{
+    display: flex;
+    min-width: 289px;
+    min-height: 350px;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    padding: 3px;
+}
+/*Tamaño*/
+.elementSize{
+    display: flex;
+    
+}
+/*Descripcion del pokemon*/
+.description{
+    background-color: rgb(255, 243, 218);
+    border-radius: 15px;
+    padding: 5px;
+}
+
+
+/*Icons*/
+img.Icon{
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+
+}
+
+p.size{
+    background-color: rgb(253, 156, 99);
+    padding-right: 10px;
+    padding-left: 10px;
+    border-radius: 2px;
+    color: aliceblue;
+    text-align: center;
+    border: solid;
+    border-color: black;
+    border-width: 1px;
+    width: 75px;
+    text-shadow:         
+        -1px -1px 0px #000,
+        0px -1px 0px #000,
+        1px -1px 0px #000,
+        -1px  0px 0px #000,
+        1px  0px 0px #000,
+        -1px  1px 0px #000,
+        0px  1px 0px #000,
+        1px  1px 0px #000;
+}
+p.sizeNumber{
+    padding-left: 5px;
+
+}
+/*Contenedor Inferior-------------------------------------------------------------*/
+.conteinerBottom{
+    display: flex;
+    border: solid;
+    border-radius: 50px;
+    width: 670px;
+    height:403px ;
+    flex-direction: column;
+    flex-wrap: wrap;
+    background-color: rgb(254, 255, 183);
+    background-image: repeating-linear-gradient( rgb(244, 247, 118) , rgba(189, 192, 0, 0.342) 5px);
+    justify-content: space-around;
+    padding: 20px;
+}
+.conteinerMoves{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-content: flex-start;
+    border-radius: 5px;
+    background-color: rgba(255, 200, 129, 0.788);
+    width: 410px;
+    min-height: 200px;
+    max-height: 220px;
+    overflow: auto;
+
+}
+p.moveTitle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    font-size: larger;
+    height: 5px;
+    width: 100%;
+    padding-top: 2px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-top: 10px;
+    border-radius: 4px;
+    background-color: rgb(97, 74, 43);
+    color: rgb(223, 223, 223); 
+    text-shadow: 
+        /* first layer at 1px */
+        -1px -1px 0px rgb(97, 74, 43),
+         0px -1px 0px rgb(97, 74, 43),
+         1px -1px 0px rgb(97, 74, 43),
+        -1px  0px 0px rgb(97, 74, 43),
+         1px  0px 0px rgb(97, 74, 43),
+        -1px  1px 0px rgb(97, 74, 43),
+         0px  1px 0px rgb(97, 74, 43),
+         1px  1px 0px rgb(97, 74, 43),
+        /* second layer at 2px */
+        -2px -2px 0px rgb(97, 74, 43),
+        -1px -2px 0px rgb(97, 74, 43),
+         0px -2px 0px rgb(97, 74, 43),
+         1px -2px 0px rgb(97, 74, 43),
+         2px -2px 0px rgb(97, 74, 43),
+         2px -1px 0px rgb(97, 74, 43),
+         2px  0px 0px rgb(97, 74, 43),
+         2px  1px 0px rgb(97, 74, 43),
+         2px  2px 0px rgb(97, 74, 43),
+         1px  2px 0px rgb(97, 74, 43),
+         0px  2px 0px rgb(97, 74, 43),
+        -1px  2px 0px rgb(97, 74, 43),
+        -2px  2px 0px rgb(97, 74, 43),
+        -2px  1px 0px rgb(97, 74, 43),
+        -2px  0px 0px rgb(97, 74, 43),
+        -2px -1px 0px rgb(97, 74, 43);
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 5px;
+  }
+   
+  ::-webkit-scrollbar-thumb {
+    background: rgb(255, 179, 66);
+    border-radius: 5px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #d8800c; 
+  }
+
+.elementMove{
+    display: flex;
+    width: 100%;
+    height: 55PX;
+    transition: background-color .2s;
+    
+}
+.elementMove:hover{
+    background: #ffa570; 
+}
+
+
+/*------------------------------abilities-------------------------*/
+.conteinerAbilities{
+    display: flex;
+    align-items: stretch;
+    width: 410px;
+    min-height: 100px;
+    background-color: rgb(255, 243, 218);
+    border-radius: 10px;
+    flex-direction: column;
+    
+}
+p.abilitiesTitle{
+    display: flex;
+    flex: auto;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    font-size: larger;
+    height: 5px;
+    padding-top: 2px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+
+    border-radius: 4px;
+    background-color: rgb(97, 74, 43);
+    color: rgb(223, 223, 223); 
+    text-shadow: 
+        /* first layer at 1px */
+        -1px -1px 0px rgb(97, 74, 43),
+         0px -1px 0px rgb(97, 74, 43),
+         1px -1px 0px rgb(97, 74, 43),
+        -1px  0px 0px rgb(97, 74, 43),
+         1px  0px 0px rgb(97, 74, 43),
+        -1px  1px 0px rgb(97, 74, 43),
+         0px  1px 0px rgb(97, 74, 43),
+         1px  1px 0px rgb(97, 74, 43),
+        /* second layer at 2px */
+        -2px -2px 0px rgb(97, 74, 43),
+        -1px -2px 0px rgb(97, 74, 43),
+         0px -2px 0px rgb(97, 74, 43),
+         1px -2px 0px rgb(97, 74, 43),
+         2px -2px 0px rgb(97, 74, 43),
+         2px -1px 0px rgb(97, 74, 43),
+         2px  0px 0px rgb(97, 74, 43),
+         2px  1px 0px rgb(97, 74, 43),
+         2px  2px 0px rgb(97, 74, 43),
+         1px  2px 0px rgb(97, 74, 43),
+         0px  2px 0px rgb(97, 74, 43),
+        -1px  2px 0px rgb(97, 74, 43),
+        -2px  2px 0px rgb(97, 74, 43),
+        -2px  1px 0px rgb(97, 74, 43),
+        -2px  0px 0px rgb(97, 74, 43),
+        -2px -1px 0px rgb(97, 74, 43);
+}
+.elementAbility{
+    display: flex;
+    align-content: center;
+    align-items: center;
+    background-color: rgba(255, 208, 107, 0.719);
+    border-radius: 10px;
+    height: 25px;
+}
+
+    
+
+  input[type="radio"].abilityInput {
+    display: none;
+  }
+  
+  input[type="radio"].abilityInput:checked + label {
+    background-color: rgb(216, 128, 12);
+  }
+  label.abilityLabel{
+    background-color: rgba(216, 128, 12, 0.479);
+    border-radius: 10px;
+    flex: auto;
+    height: 25px;
+    white-space:initial;
+    padding: 0px;
+    margin: 0px;
+    color: aliceblue;
+    text-align: center;
+    cursor: pointer;
+    text-shadow:         
+        -1px -1px 0px #000,
+        0px -1px 0px #000,
+        1px -1px 0px #000,
+        -1px  0px 0px #000,
+        1px  0px 0px #000,
+        -1px  1px 0px #000,
+        0px  1px 0px #000,
+        1px  1px 0px #000;
+  }
+
+/*stats*/
+.conteinerAllStats{
+    display: flex;
+    margin: 10px;
+    border-radius: 15px;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-content: space-around;
+    width: 250px;
+    height: 350px;
+    background-color: rgba(253, 190, 139, 0.589);
+
+}
+.elementStat{
+    display: flex;
+    height: 20%;
+    justify-content: space-around;
+    flex-wrap: nowrap;
+    align-items: baseline;
+}
+
+p.statName{
+    background-color: rgb(87, 87, 87);
+    border-radius: 10px;
+    color: aliceblue;
+    width: 50%;
+    text-align: center;
+    
+}
+p.statNumber{
+    width: 20%;
+    text-align: right;
+    background-color: rgb(255, 243, 218);
+    border-color: rgba(255, 157, 91, 0.678);
+    border-radius: 5px;
+}
+/*tipos Pokemon--------------------------------------------------------------------*/
+p.grass{
+    background-color: rgb(95, 194, 15);
+    margin-left: 10px;
+    margin-right: 10px;
+    background-image: radial-gradient(rgb(95, 194, 15),rgba(203, 247, 184, 0.781));
+    border-radius: 5px;
+    color: aliceblue;
+    text-align: center;
+    border: solid;
+    border-color: black;
+    border-width: 1px;
+    width: 75px;
+    text-shadow: 1px  0px 0px black,
+    0px  1px 0px black,
+   -1px  0px 0px black,
+    0px -1px 0px black;
+
+}
+
+p.fire{
+    background-color: rgb(255, 65, 31);
+    margin-left: 10px;
+    margin-right: 10px;
+    background-image: radial-gradient(rgb(255, 60, 0),rgba(255, 157, 157, 0.89));
+    border-radius: 5px;
+    color: aliceblue;
+    text-align: center;
+    border: solid;
+    border-color: black;
+    border-width: 1px;
+    width: 75px;
+    text-shadow: 1px  0px 0px black,
+    0px  1px 0px black,
+   -1px  0px 0px black,
+    0px -1px 0px black;
+
+}
+p.water{
+    background-color: rgb(50, 166, 219);
+    margin-left: 10px;
+    margin-right: 10px;
+    background-image: radial-gradient(rgb(26, 146, 202),rgba(154, 222, 253, 0.842));
+    border-radius: 5px;
+    color: aliceblue;
+    text-align: center;
+    border: solid;
+    border-color: black;
+    border-width: 1px;
+    width: 75px;
+    text-shadow: 1px  0px 0px black,
+    0px  1px 0px black,
+   -1px  0px 0px black,
+    0px -1px 0px black;
+
+}
+p.ground{
+    background-color: rgb(197, 155, 38);
+    margin-left: 10px;
+    margin-right: 10px;
+    background-image: radial-gradient(rgb(211, 153, 28),rgba(228, 201, 127, 0.76));
+    border-radius: 5px;
+    color: aliceblue;
+    text-align: center;
+    border: solid;
+    border-color: black;
+    border-width: 1px;
+    width: 75px;
+    text-shadow: 1px  0px 0px black,
+    0px  1px 0px black,
+   -1px  0px 0px black,
+    0px -1px 0px black;
+
+}
+p.fighting{
+    background-color: rgb(202, 57, 0);
+    margin-left: 10px;
+    margin-right: 10px;
+    background-image: radial-gradient(rgb(202, 57, 0),rgba(218, 146, 118, 0.89));
+    border-radius: 5px;
+    color: aliceblue;
+    text-align: center;
+    border: solid;
+    border-color: black;
+    border-width: 1px;
+    width: 75px;
+    text-shadow: 1px  0px 0px black,
+    0px  1px 0px black,
+   -1px  0px 0px black,
+    0px -1px 0px black;
+
+}
+
+p.normal{
+    background-color: rgb(112, 112, 112);
+    margin-left: 10px;
+    margin-right: 10px;
+    background-image: radial-gradient(rgb(170, 170, 170),rgba(255, 255, 255, 0.89));
+    border-radius: 5px;
+    color: aliceblue;
+    text-align: center;
+    border: solid;
+    border-color: black;
+    border-width: 1px;
+    width: 75px;
+    text-shadow: 1px  0px 0px black,
+    0px  1px 0px black,
+   -1px  0px 0px black,
+    0px -1px 0px black;
+
+}
+
+p.steel{
+    background-color: rgb(130, 122, 143);
+    margin-left: 10px;
+    margin-right: 10px;
+    background-image: radial-gradient(rgb(130, 122, 143),rgba(204, 211, 216, 0.89));
+    border-radius: 5px;
+    color: aliceblue;
+    text-align: center;
+    border: solid;
+    border-color: black;
+    border-width: 1px;
+    width: 75px;
+    text-shadow: 1px  0px 0px black,
+    0px  1px 0px black,
+   -1px  0px 0px black,
+    0px -1px 0px black;
+
+}
+p.bug{
+    background-color: rgb(189, 201, 25);
+    margin-left: 10px;
+    margin-right: 10px;
+    background-image: radial-gradient(rgb(189, 201, 25),rgba(221, 238, 161, 0.849));
+    border-radius: 5px;
+    color: aliceblue;
+    text-align: center;
+    border: solid;
+    border-color: black;
+    border-width: 1px;
+    width: 75px;
+    text-shadow: 1px  0px 0px black,
+    0px  1px 0px black,
+   -1px  0px 0px black,
+    0px -1px 0px black;
+
+}
+p.dragon{
+    background-color: rgb(91, 61, 197);
+    margin-left: 10px;
+    margin-right: 10px;
+    background-image: radial-gradient(rgb(91, 61, 197),rgba(161, 135, 216, 0.822));
+    border-radius: 5px;
+    color: aliceblue;
+    text-align: center;
+    border: solid;
+    border-color: black;
+    border-width: 1px;
+    width: 75px;
+    text-shadow: 1px  0px 0px black,
+    0px  1px 0px black,
+   -1px  0px 0px black,
+    0px -1px 0px black;
+
+}
+p.rock{
+    background-color: rgb(201, 171, 0);
+    margin-left: 10px;
+    margin-right: 10px;
+    background-image: radial-gradient(rgb(201, 171, 0),rgba(230, 214, 124, 0.897));
+    border-radius: 5px;
+    color: aliceblue;
+    text-align: center;
+    border: solid;
+    border-color: black;
+    border-width: 1px;
+    width: 75px;
+    text-shadow: 1px  0px 0px black,
+    0px  1px 0px black,
+   -1px  0px 0px black,
+    0px -1px 0px black;
+
+}
+p.flying{
+    background-color: rgb(15, 121, 182);
+    margin-left: 10px;
+    margin-right: 10px;
+    background-image: radial-gradient(rgb(15, 121, 182),rgba(128, 190, 226, 0.733));
+    border-radius: 5px;
+    color: aliceblue;
+    text-align: center;
+    border: solid;
+    border-color: black;
+    border-width: 1px;
+    width: 75px;
+    text-shadow: 1px  0px 0px black,
+    0px  1px 0px black,
+   -1px  0px 0px black,
+    0px -1px 0px black;
+
+}
+p.poison{
+    background-color: rgb(176, 63, 204);
+    margin-left: 10px;
+    margin-right: 10px;
+    background-image: radial-gradient(rgb(176, 63, 204),rgba(218, 149, 235, 0.767));
+    border-radius: 5px;
+    color: aliceblue;
+    text-align: center;
+    border: solid;
+    border-color: black;
+    border-width: 1px;
+    width: 75px;
+    text-shadow: 1px  0px 0px black,
+    0px  1px 0px black,
+   -1px  0px 0px black,
+    0px -1px 0px black;
+
+}
+p.fairy{
+    background-color: rgb(253, 37, 217);
+    margin-left: 10px;
+    margin-right: 10px;
+    background-image: radial-gradient(rgb(253, 37, 217),rgba(255, 173, 241, 0.644));
+    border-radius: 5px;
+    color: aliceblue;
+    text-align: center;
+    border: solid;
+    border-color: black;
+    border-width: 1px;
+    width: 75px;
+    text-shadow: 1px  0px 0px black,
+    0px  1px 0px black,
+   -1px  0px 0px black,
+    0px -1px 0px black;
+
+}
+p.dark{
+    background-color: rgb(112, 112, 112);
+    margin-left: 10px;
+    margin-right: 10px;
+    background-image: radial-gradient(rgb(85, 46, 24),rgba(182, 124, 91, 0.726));
+    border-radius: 5px;
+    color: aliceblue;
+    text-align: center;
+    border: solid;
+    border-color: black;
+    border-width: 1px;
+    width: 75px;
+    text-shadow: 1px  0px 0px black,
+    0px  1px 0px black,
+   -1px  0px 0px black,
+    0px -1px 0px black;
+
+}
+p.ghost{
+    background-color: rgb(106, 8, 151);
+    margin-left: 10px;
+    margin-right: 10px;
+    background-image: radial-gradient(rgb(106, 8, 151),rgba(178, 119, 206, 0.733));
+    border-radius: 5px;
+    color: aliceblue;
+    text-align: center;
+    border: solid;
+    border-color: black;
+    border-width: 1px;
+    width: 75px;
+    text-shadow: 1px  0px 0px black,
+    0px  1px 0px black,
+   -1px  0px 0px black,
+    0px -1px 0px black;
+
+}
+
+p.psychic{
+    background-color: rgb(168, 18, 106);
+    margin-left: 10px;
+    margin-right: 10px;
+    background-image: radial-gradient(rgb(168, 18, 106),rgba(211, 114, 171, 0.774));
+    border-radius: 5px;
+    color: aliceblue;
+    text-align: center;
+    border: solid;
+    border-color: black;
+    border-width: 1px;
+    width: 75px;
+    text-shadow: 1px  0px 0px black,
+    0px  1px 0px black,
+   -1px  0px 0px black,
+    0px -1px 0px black;
+
+}
+p.ice{
+    background-color: rgb(4, 197, 197);
+    margin-left: 10px;
+    margin-right: 10px;
+    background-image: radial-gradient(rgb(4, 197, 197),rgba(161, 252, 252, 0.808));
+    border-radius: 5px;
+    color: aliceblue;
+    text-align: center;
+    border: solid;
+    border-color: black;
+    border-width: 1px;
+    width: 75px;
+    text-shadow: 1px  0px 0px black,
+    0px  1px 0px black,
+   -1px  0px 0px black,
+    0px -1px 0px black;
+
+}
+p.electric{
+    background-color: rgb(255, 208, 0);
+    margin-left: 10px;
+    margin-right: 10px;
+    background-image: radial-gradient(rgb(255, 208, 0),rgba(248, 233, 166, 0.692));
+    border-radius: 5px;
+    color: aliceblue;
+    text-align: center;
+    border: solid;
+    border-color: black;
+    border-width: 1px;
+    width: 75px;
+    text-shadow: 1px  0px 0px black,
+    0px  1px 0px black,
+   -1px  0px 0px black,
+    0px -1px 0px black;
+
+}
+p.NoneType{
+    background-color: none;
+}

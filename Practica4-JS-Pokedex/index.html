@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <link rel="shortcut icon" href="ImagenPokedex/pokedex.png">
+    <title>Pokedex</title>
+ 
+</head>
+<body>
+    <!-- Contenedor Superior-->
+    <section  class="conteinerTop">
+        <div class="elementTop">
+            <div class="elementInput">
+                <input type="text" placeholder="Pokemon" id="searchPokemon">
+                <button type="button" onclick="fetchPokemon()">Search</button>
+            </div>
+            <div class="elementForm">
+                
+            </div>
+            <img src="ImagenPokedex/pokeball.png" alt="NotFound" width="300px" height="300px" id="pokeImg"></img>
+    
+        </div>
+        <!-- Nombre y numero de pokedex del pokemon-->
+        <div class="elementTypeSize">
+            <div class="elementName">
+                <div>
+                    <img src="ImagenPokedex/pokeball.png" alt="Back" id="backPokemon" class="Icon" onclick="backPokemon()">
+                </div>
+                <div class="elementId">
+                    <img src="ImagenPokedex/pokeball.png" alt="NotFound" width="40px" height="40px" id="pokeIcon"></img>
+                    <p>No.</p>
+                    <p id="pokedexNumber">---</p>
+                    <p id="pokeName" class="pokemonName">name</p>
+                </div>
+                <div>
+                    <img src="ImagenPokedex/pokeball.png" alt="Back" id="nextPokemon" class="Icon" onclick="nextPokemon()">
+                </div>
+
+            </div>
+            <!--Categoria de pokemon-->
+            <div class="pokeCategory">
+                <p>CATEGORY:&nbsp;</p>
+                <p id="textCategory">Pokemon</p>
+            </div>
+            <!--Peso y tamaño de pokemon-->
+            <div class="size">
+                <div class="elementSize">
+                    <p class="size"  id="pokeSizeNameheight">Height</p>
+                    <p class="sizeNumber" id="pokeSizeheight">0</p>
+                </div>
+                <div class="elementSize">
+                    <p class="size" id="pokeSizeNameweight">Weight</p>
+                    <p class="sizeNumber" id="pokeSizewight">0</p>
+                </div>
+            </div>
+            <!--Tipos del pokemon-->
+            <div class="type">
+                <div class="elementSize">
+                    <p class="size">Type</p>
+                    <p id="type1" class="NoneType"></p>
+                    <p id="type2" class="NoneType"></p>
+                </div>
+            </div>
+            <!-- Descripcion del pokemon-->
+            <div class="description">
+                <p id="descriptionText" class="textDescriptionP">
+                    None
+                </p>
+            </div>
+        </div>
+        
+    </section>
+    <!--Contenedor de inferior-->
+    <section class="conteinerBottom">
+
+        <section id="conteinerMove" class="conteinerMoves">
+            <p class="moveTitle">MOVES</p> 
+        </section>
+        <!--- Contenedor Abilidades---->  
+        <section class="conteinerAbilities">
+            <div class="elementAbility" id="conteinerAbilityName">
+                <p class="abilitiesTitle" >ABILITY</p>
+                    <!-- <div class="elementRadio"> 
+                        <input type="radio" id="ability1" 
+                        value="overgrow" 
+                        name="ability">
+                        <label class="Ability" for="ability1">overgrow</label>
+                    </div>
+                    <div class="elementRadio">
+                        <input type="radio" id="ability2" value="123321" name="ability">
+                        <label class="Ability" for="ability2">123123</label>
+                    </div>
+                    <div class="elementRadio">
+                        <input type="radio" id="ability3" value="123123" name="ability">
+                        <label class="Ability" for="ability3">123321</label>
+                    </div>-->
+
+            </div>
+           <p id ="textAbility"  class="textDescriptionP">
+                None Ability
+           </p> 
+           <!--Contenedor Stats-->
+        </section>
+        <section class="conteinerAllStats">
+            <div class="elementStat">
+                <p class="statName" id="pokeStatNamehp">Hp</p>
+                <p class="statNumber" id="pokeStathp">0</p>
+            </div>
+            <div class="elementStat">
+                <p class="statName" id="pokeStatNameattack">attack</p>
+                <p class="statNumber" id="pokeStatattack">0</p>
+            </div>
+            <div class="elementStat">
+                <p class="statName" id="pokeStatNamedefense">defense</p>
+                <p class="statNumber" id="pokeStatdefense">0</p>
+            </div>
+            <div class="elementStat">
+                <p class="statName" id="pokeStatNamespecial-attack">special-attack</p>
+                <p class="statNumber" id="pokeStatspecial-attack">0</p>
+            </div>
+            <div class="elementStat">
+                <p class="statName" id="pokeStatNamespecial-defense">special-defense</p>
+                <p class="statNumber" id="pokeStatspecial-defense">0</p>
+            </div >
+            <div class="elementStat">
+                <p class="statName" id="pokeStatNamespeed">speed</p>
+                <p class="statNumber" id="pokeStatspeed">0</p>
+            </div>
+        </section>
+
+
+    </section>
+
+
+</body>
+<footer>
+    <script src="./index.js" ></script>
+</footer>
+</html>
