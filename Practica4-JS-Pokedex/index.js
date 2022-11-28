@@ -15,60 +15,70 @@ const fetchPokemon = async() => {
     })
     if (data) {
         console.log(data);
-        let pokeId  = data.id;
-        let pokeImg = data.sprites.front_default;
-        pokeImage(pokeImg,pokeId);
-        //obtencion de los stats de cada pokemon
-        let pokeStat = data.stats;
-        pokeStats(pokeStat)
-        // Obtencion del Peso del Pokemon
-        let pokeSizeWeight = data.weight;
-        let pokeSizeHeight = data.height;
-        pokeSize(pokeSizeHeight, pokeSizeWeight)
-        let pokeName  = data.name;
-        pokeNameId(pokeName, pokeId);
-        //Obtencion de los Tipos de pokemon--------------
-        let pokeTypes = data.types;
-        pokeType(pokeTypes);
-        //poner Iconos anterior y siguientes
-        pokeIcons(pokeId);
-        //Agregar los movimiento del pokemon
-        fetchPokeMove(data.moves);
-        let dataAbilityName = data.abilities;
-        fetchPokeAbilities(dataAbilityName[0].ability.name);
-        removeElementsByClass("abilityLabel");
-        removeElementsByClass("abilityInput");
-        for(let i =0; i< dataAbilityName.length;i++){
-            pokeAbilityName(dataAbilityName[i], i);
+        const textId = document.getElementById("pokedexNumber");
+        let numberId = parseInt(textId.innerHTML);
+        if(data.id !=numberId){
+            removeElementsByClass("abilityLabel");
+            removeElementsByClass("abilityInput");
+            removeElementsByClass("elementMove");
+        
+            let pokeId  = data.id;
+            let pokeImg = data.sprites.front_default;
+            pokeImage(pokeImg,pokeId);
+            //obtencion de los stats de cada pokemon
+            let pokeStat = data.stats;
+            pokeStats(pokeStat)
+            // Obtencion del Peso del Pokemon
+            let pokeSizeWeight = data.weight;
+            let pokeSizeHeight = data.height;
+            pokeSize(pokeSizeHeight, pokeSizeWeight)
+            let pokeName  = data.name;
+            pokeNameId(pokeName, pokeId);
+            //Obtencion de los Tipos de pokemon--------------
+            let pokeTypes = data.types;
+            pokeType(pokeTypes);
+            //poner Iconos anterior y siguientes
+            pokeIcons(pokeId);
+            //Agregar los movimiento del pokemon
+            fetchPokeMove(data.moves );
+            let dataAbilityName = data.abilities;
+            fetchPokeAbilities(dataAbilityName[0].ability.name);
+
+            for(let i =0; i< dataAbilityName.length;i++){
+                pokeAbilityName(dataAbilityName[i], i);
+            }
         }
 
     }
-    const urlDescription = `https://pokeapi.co/api/v2/pokemon-species/${pokeName}`;
-    let dataDes = await fetch(urlDescription).then((res) => {
-        if (res.status != "200") {
-            console.log(res);
+
+    const textId = document.getElementById("pokedexNumber");
+    let numberId = parseInt(textId.innerHTML);
+        const urlDescription = `https://pokeapi.co/api/v2/pokemon-species/${pokeName}`;
+        let dataDes = await fetch(urlDescription).then((res) => {
+            if (res.status != "200") {
+                console.log(res);
+            }
+            else {
+                return res.json();
+            }
+        })
+        if(dataDes)
+        {
+            let pokeDes = dataDes.flavor_text_entries;
+            pokeDescription(pokeDes,"descriptionText" );
+            let pokeCat = dataDes.genera;
+            pokeCategory(pokeCat);
+
         }
-        else {
-            return res.json();
-        }
-    })
-    if(dataDes)
-    {
-        let pokeDes = dataDes.flavor_text_entries;
-        pokeDescription(pokeDes,"descriptionText" );
-        let pokeCat = dataDes.genera;
-        pokeCategory(pokeCat);
 
-    }
-
-
+    
 
 
 }
 //movimientos
 const fetchPokeMove = async(data) => {
     const divElementMove = document.getElementsByClassName("elementMove");
-    removeElementsByClass("elementMove");
+    //removeElementsByClass("elementMove");
 
     for(let i =0 ; i<data.length;i++){
         const urlMove = data[i].move.url;
