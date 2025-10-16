@@ -4,7 +4,7 @@ A simple interactive Pokedex web application that consumes the public [PokéAPI]
 Shows Pokémon sprites, stats, types, abilities and moves. Built with plain HTML, CSS and JavaScript.
 
 ## Demo
-Live demo: *(add your deployed URL here when available)*
+Live demo: *https://github.com/SUPERNNG/SUPERNNG.github.io/tree/main/Practica4-JS-Pokedex)*
 
 ## Features
 - Search Pokémon by name or id
@@ -16,8 +16,4 @@ Live demo: *(add your deployed URL here when available)*
 ## Tech stack
 - HTML, CSS, JavaScript (vanilla)
 - PokéAPI (REST)
-
-## Online
-1. See online:
-   https://github.com/SUPERNNG/SUPERNNG.github.io/tree/main/Practica4-JS-Pokedex
 
